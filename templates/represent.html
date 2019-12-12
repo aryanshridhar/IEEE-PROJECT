@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href= {{ url_for('static', filename = 'repercss.css')}}>
+        <style>
+            input[type="submit"]{ 
+            background:white; 
+            opacity: 0.8;
+            border-radius: 10px;
+            cursor: pointer; 
+            color: #3e3d3d;
+            width: 40%;
+            margin-left: 105px;
+            height: 40px;
+            }
+        
+            input[type="submit"]:hover{ 
+                opacity: 1; 
+                transition: .4s;
+            }
+            p.field{
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="form-wrap">
+            <form action=" " method="POST">
+                <h1>REGISTER AS REPRESENTATIVE</h1>
+                <br>
+                <br>
+                    
+                    {{ reg.csrf_token }}
+                    <p class = 'field'>Name : </p>
+                    {{ reg.name(placeholder="Name") }}
+
+                                {% if reg.name.errors %}
+                                    {% for i in reg.name.errors %}
+                                        <p>{{ i }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                    <p class = 'field'>Username : </p>
+                    {{ reg.username(placeholder="Username") }}
+                
+                                {% if reg.username.errors %}
+                                    {% for i in reg.username.errors %}
+                                         <p>{{ i }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                    
+                                {% if message1 %}
+                                    <p>{{ message1 }}</p>
+                                {% endif %}
+                
+                    <p class = 'field'>Age : </p>
+                    {{ reg.age(placeholder="Age") }}
+                
+                                {% if reg.age.errors %}
+                                    {% for i in reg.age.errors %}
+                                        <p>{{ i }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                
+                    {{ reg.button }}
+            </form>
+        </div>    
+    </body>
+</html>

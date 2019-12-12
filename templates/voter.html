@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voter</title>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'votercss.css')}}>
+        <style>
+            table{
+                border-collapse: collapse;
+                border-radius: 10px;
+            }
+            th{
+                background-color: #ccccff;
+                text-transform: uppercase;
+            }
+            body{
+                background-color: #d6d6c2;
+            }
+            td{
+                font-size: 18px;
+                background-color:#CEE2E0;
+            }
+            ul{
+                list-style-type: none;
+            }
+            div.but{
+                margin-top: 50px;
+            }
+            input[type='submit']{
+                width: 10%;
+                height: 50px;
+                border: 1px solid black;
+                border-radius: 20px;
+                background :none;
+                font-family: Arial;
+                font-size: 20px;
+            }
+            p.msg{
+                font-size: 25px;
+            }
+            input[type='submit']:hover{
+                background-color:#ccccff;
+                transition: 0.3s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <form action = '' method="POST">
+            {{ form.csrf_token }}
+        <div align = 'center' class ='table'>
+            <table>
+                <th>Serial No</th>
+                <th>Representatives</th>
+                <th>Age</th>
+                <th>Vote For</th>
+                    {% for i in new %}
+                        <tr>
+                            <td>{{ i[2][0]}}</td>
+                            <td>{{ i[0][0] }}</td>
+                            <td>{{ i[1][0] }}</td>
+                            <td><input type="radio" name="ieee" id="1" value= "{{ i[0][0] }}" required>Vote</td>
+                        </tr>
+                    {% endfor %}
+            </table>
+                {% if message2 %}
+                        <p class = 'msg'>{{ message2 }}</p>
+                {% else %}
+                    <div class ='but'>
+                        {{ form.button }}
+                    </div>
+                {% endif %}
+        </div>
+        </form>
+    </body>
+</html>

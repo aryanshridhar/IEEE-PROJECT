@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+}
+div.table{
+    margin-top: 30px;
+}
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 70%;
+}
+th{
+    border: 1px groove black;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+td{
+    border: 1px groove black;
+    padding: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}

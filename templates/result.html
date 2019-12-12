@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+        <link rel='stylesheet' href = {{ url_for('static' , filename = 'result.css')}}>
+        <style>
+            p.msg{
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div align ='center' class = 'result'>
+            <table>
+                <th>Representative</th>
+                <th>Votes Obtained</th>
+                {% for i in new %}
+                <tr>
+                        <td>{{ i[0][0] }}</td>
+                        <td>{{ i[1][0] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+                {% if message1 %}
+                        <p class = 'msg'>{{ message1 }}</p>
+                {% endif %}
+        </div>
+    </body>
+</html>

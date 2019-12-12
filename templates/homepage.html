@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webpage</title>
+          <meta charset="UTF-8">
+          <meta name="description" content="Free Polling Website">
+          <meta name="keywords" content="Polling Website">
+          <meta name="author" content="Aryan Shridhar">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href= {{ url_for('static' , filename = 'style.css')}}>
+        <style>
+            div.hover{
+                margin-right: 500px;
+            }
+            div.flash{
+                width: 500px;
+                height: 50px;
+                border: 1px solid #ccccb3;
+                border-radius: 25px;
+                background-color: #ccccb3;
+                margin-left: 650px;
+                align-items: center;
+            }
+            p.flash{
+                margin-left: 100px;
+                font-size: 19px;
+            }
+        </style>
+    </head>
+    <div class='header'>
+        <div class="heading">
+            <h1>Select Your field : </h1>
+        </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class = 'flash'>
+                    {% for i in messages %}
+                        <p class="flash">{{i}}</p>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}     
+    </div>
+    <div class = "hover">
+        <ul>
+            <li><a href = "/represent">Representative</a></li>
+            <li><a href = "/vote">Voter</a></li>
+            <li><a href = "/result">View Result</a></li>
+            <li><a href = "/clear">Clear Records</a></li>        
+        </ul>
+    </div>
+    <div class="about">
+        <div class = 'a'>
+        <a href = "/about">About Me</a>
+        </div>
+    </div>
+</html>
