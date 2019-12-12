@@ -33,6 +33,9 @@ pip install flask-mysqldb
 </li>
 </ul>
 <br>
-
-5.Thats ' it <br> 
+5.Execute/Run the polling.py file,is using terminal then:
+<pre>
+python polling.py
+</pre>
+6.Thats ' it <br> 
 You are ready ! 
