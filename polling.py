@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = 'ChaosIsALadder' #PROTECTING CSRF
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'aryan'
-app.config['MYSQL_DB'] = 'aryan'
+app.config['MYSQL_DB'] = 'polling'
 
 #DIRECTING TO HOME PAGE
 @app.route('/')
